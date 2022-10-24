@@ -11,7 +11,7 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
+SESSION = environ.get('SESSION', "Media_Search")
 API_ID = int(environ.get('API_ID', "13570748"))
 API_HASH = environ.get('API_HASH', "5e7dcf76a539a41177fb5b44f767d069")
 BOT_TOKEN = environ.get('BOT_TOKEN', "5658518994:AAGnwXCsb2NFNpp5PcBPtgFe9WSyl3AZiWg")
@@ -32,7 +32,7 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://hansaka:anuhas@cluster0.1ijt5y8.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://hansaka:anuhas@cluster0.1vcl6aa.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', "Telegram_Files")
 
