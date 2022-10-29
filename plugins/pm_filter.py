@@ -408,6 +408,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pages":
         await query.answer()
+        elif query.data == "pages":
+        await query.answer("ᴘᴀɢᴇs ᴍᴇᴀɴs 𝟻 ғɪʟᴇs ɪɴ ᴏɴᴇ ᴘᴀɢᴇ\n\nɪғ ʏᴏᴜ ɴᴏᴛ sᴇᴇ ʏᴏᴜʀ ғɪʟᴇs ᴏɴ ᴛʜɪs ᴘᴀɢᴇ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ᴘᴀɢᴇ.\n\nPowered by :- KD Botz", show_alert=True)
+
+    elif query.data == "info":
+        await query.answer(text=script.REQINFO, show_alert=True)
+
+    elif query.data == "movies":
+        await query.answer(text=script.MINFO, show_alert=True)
+
+    elif query.data == "series":
+        await query.answer(text=script.SINFO, show_alert=True)
+
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -588,15 +600,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('Loading...')
-
-elif query.data == "info":
-    await query.answer(text=script.REQINFO, show_alert=True)
-
-elif query.data == "movies":
-    await query.answer(text=script.MINFO, show_alert=True)
-
-elif query.data == "series":
-    await query.answer(text=script.SINFO, show_alert=True)
 
 
 async def auto_filter(client, msg, spoll=False):
