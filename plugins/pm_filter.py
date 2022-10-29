@@ -1,4 +1,4 @@
-import asyncio
+import asynci
 import re
 import ast
 import math
