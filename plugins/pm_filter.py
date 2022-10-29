@@ -81,6 +81,13 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton('ᴍᴏᴠɪᴇs', callback_data='movies'),
+            InlineKeyboardButton('ɪɴғᴏ', callback_data='info'),
+            InlineKeyboardButton('sᴇʀɪᴇs', callback_data='series')
+        ]
+    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -581,6 +588,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('Loading...')
+    elif query.data == "info":
+        await query.answer(text=script.REQINFO, show_alert=True)
+
+    elif query.data == "movies":
+        await query.answer(text=script.MINFO, show_alert=True)
+
+    elif query.data == "series":
+        await query.answer(text=script.SINFO, show_alert=True)
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -628,6 +643,13 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton('ᴍᴏᴠɪᴇs', callback_data='movies'),
+            InlineKeyboardButton('ɪɴғᴏ', callback_data='info'),
+            InlineKeyboardButton('sᴇʀɪᴇs', callback_data='series')
+        ]
+    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
