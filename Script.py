@@ -66,8 +66,8 @@ Added By - {}"""
 ID - <code>{}</code>
 Name - {}"""
 
-    FORCESUB_TXT = """1. First join the Updates Channel.
-2. Then press the Try Again button."""
+    FORCESUB_TXT = """1. First Join the Updates Channel.
+2. Then press the Try Again Button."""
 
     HOWTODOWNLOAD_TXT = """1. First press the Button of the Movie you want.
-2. Then <b>start</b> the Bot."""
+2. Then Start the Bot."""
