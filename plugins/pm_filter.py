@@ -97,17 +97,6 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
 
-    elif query.data == "pages":
-        await query.answer()
-        
-    elif query.data == "info":
-        await query.answer(text=script.REQINFO, show_alert=True)
-
-    elif query.data == "movies":
-        await query.answer(text=script.MINFO, show_alert=True)
-
-    elif query.data == "series":
-        await query.answer(text=script.SINFO, show_alert=True)
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
@@ -418,6 +407,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
+    elif query.data == "pages":
+        await query.answer()
+        
+    elif query.data == "howtodownload":
+        await query.answer(text=script.HOWTODOWNLOAD_TXT, show_alert=True)
 
     elif query.data == "start":
         buttons = [[
