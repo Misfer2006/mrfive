@@ -95,10 +95,17 @@ async def next_page(bot, query):
              InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
+        btn.append(
+            [
+                InlineKeyboardButton("✅ How To Download ✅", callback_data="howtodownload")]
+        )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+        btn.append(
+            [
+                InlineKeyboardButton("✅ How To Download ✅", callback_data="howtodownload")])
     else:
         btn.append(
             [
@@ -109,7 +116,7 @@ async def next_page(bot, query):
         )
         btn.append(
             [
-                InlineKeyboardButton("How to Download", callback_data="howtodownload")]
+                InlineKeyboardButton("✅ How To Download ✅", callback_data="howtodownload")]
         )
     try:
         await query.edit_message_reply_markup(
@@ -406,6 +413,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pages":
         await query.answer()
+    elif query.data == "howtodownload":
+        await query.answer(text=script.HOWTODOWNLOAD_TXT, show_alert=True)
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -531,9 +540,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-
-    elif query.data == "howtodownload":
-        await query.answer(text=script.HOWTODOWNLOAD_TXT, show_alert=True)
         )
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
@@ -645,13 +651,17 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
+        btn.append(
+            [
+                InlineKeyboardButton("✅ How To Download ✅", callback_data="howtodownload")]
+        )
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
         )
         btn.append(
             [
-                InlineKeyboardButton("How to Download", callback_data="howtodownload")]
+                InlineKeyboardButton("✅ How To Download ✅", callback_data="howtodownload")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
