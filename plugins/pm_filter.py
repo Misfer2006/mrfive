@@ -96,18 +96,6 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
-        )
-    elif query.data == "pages":
-        await query.answer()
-        
-    elif query.data == "info":
-        await query.answer(text=script.REQINFO, show_alert=True)
-
-    elif query.data == "movies":
-        await query.answer(text=script.MINFO, show_alert=True)
-
-    elif query.data == "series":
-        await query.answer(text=script.SINFO, show_alert=True)
 
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
@@ -659,6 +647,19 @@ async def auto_filter(client, msg, spoll=False):
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
+
+    elif query.data == "pages":
+        await query.answer()
+        
+    elif query.data == "info":
+        await query.answer(text=script.REQINFO, show_alert=True)
+
+    elif query.data == "movies":
+        await query.answer(text=script.MINFO, show_alert=True)
+
+    elif query.data == "series":
+        await query.answer(text=script.SINFO, show_alert=True)
+        
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
