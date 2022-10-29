@@ -57,6 +57,12 @@ Just Add Me To Your Group As Admin 🤩"""
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
 
+    FORCESUB_TXT = """1. First Join the Updates Channel.
+2. Then press the Try Again Button."""
+
+    HOWTODOWNLOAD_TXT = """1. First press the Button of the Movie you want.
+2. Then Start the Bot."""
+
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
@@ -65,9 +71,3 @@ Added By - {}"""
     LOG_TEXT_P = """#NewUser
 ID - <code>{}</code>
 Name - {}"""
-
-    FORCESUB_TXT = """1. First Join the Updates Channel.
-2. Then press the Try Again Button."""
-
-    HOWTODOWNLOAD_TXT = """1. First press the Button of the Movie you want.
-2. Then Start the Bot."""
