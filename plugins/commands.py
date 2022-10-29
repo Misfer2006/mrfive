@@ -73,7 +73,7 @@ async def start(client, message):
         await client.send_photo(
             chat_id=message.from_user.id,
             photo=random.choice(PICS),
-            caption="Please Join My Updates Channel and Try Again 😉",
+            caption=script.FORCESUB_TXT,
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
