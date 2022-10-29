@@ -107,6 +107,8 @@ async def next_page(bot, query):
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ]
         )
+    elif query.data == "howtodownload":
+        await query.answer(text=script.HOWTODOWNLOAD_TXT, show_alert=True)
         btn.append(
             [
                 InlineKeyboardButton("How to Download", callback_data="howtodownload")]
@@ -404,11 +406,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
-    elif query.data == "pages":
-        await query.answer()
-        
-    elif query.data == "howtodownload":
-        await query.answer(text=script.HOWTODOWNLOAD_TXT, show_alert=True)
 
     elif query.data == "start":
         buttons = [[
