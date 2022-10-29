@@ -100,6 +100,7 @@ async def next_page(bot, query):
     elif query.data == "pages":
         await query.answer()
         
+        )
     elif query.data == "info":
         await query.answer(text=script.REQINFO, show_alert=True)
 
