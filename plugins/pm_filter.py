@@ -408,8 +408,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "pages":
         await query.answer()
-        elif query.data == "pages":
-        await query.answer("ᴘᴀɢᴇs ᴍᴇᴀɴs 𝟻 ғɪʟᴇs ɪɴ ᴏɴᴇ ᴘᴀɢᴇ\n\nɪғ ʏᴏᴜ ɴᴏᴛ sᴇᴇ ʏᴏᴜʀ ғɪʟᴇs ᴏɴ ᴛʜɪs ᴘᴀɢᴇ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ɴᴇxᴛ ᴘᴀɢᴇ.\n\nPowered by :- KD Botz", show_alert=True)
 
     elif query.data == "info":
         await query.answer(text=script.REQINFO, show_alert=True)
