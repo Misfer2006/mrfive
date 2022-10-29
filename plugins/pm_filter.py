@@ -81,13 +81,6 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-    btn.insert(0, 
-        [
-            InlineKeyboardButton('ᴍᴏᴠɪᴇs', callback_data='movies'),
-            InlineKeyboardButton('ɪɴғᴏ', callback_data='info'),
-            InlineKeyboardButton('sᴇʀɪᴇs', callback_data='series')
-        ]
-    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -112,7 +105,11 @@ async def next_page(bot, query):
                 InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
-            ],
+            ]
+        )
+        btn.append(
+            [
+                InlineKeyboardButton("How to Download", callback_data="howtodownload")]
         )
     try:
         await query.edit_message_reply_markup(
@@ -640,13 +637,6 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-    btn.insert(0, 
-        [
-            InlineKeyboardButton('ᴍᴏᴠɪᴇs', callback_data='movies'),
-            InlineKeyboardButton('ɪɴғᴏ', callback_data='info'),
-            InlineKeyboardButton('sᴇʀɪᴇs', callback_data='series')
-        ]
-    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
@@ -659,6 +649,10 @@ async def auto_filter(client, msg, spoll=False):
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+        )
+        btn.append(
+            [
+                InlineKeyboardButton("How to Download", callback_data="howtodownload")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
