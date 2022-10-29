@@ -589,14 +589,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('Loading...')
 
-    elif query.data == "info":
-        await query.answer(text=script.REQINFO, show_alert=True)
+ elif query.data == "info":
+     await query.answer(text=script.REQINFO, show_alert=True)
 
-    elif query.data == "movies":
-        await query.answer(text=script.MINFO, show_alert=True)
+ elif query.data == "movies":
+     await query.answer(text=script.MINFO, show_alert=True)
 
-    elif query.data == "series":
-        await query.answer(text=script.SINFO, show_alert=True)
+ elif query.data == "series":
+     await query.answer(text=script.SINFO, show_alert=True)
 
 
 async def auto_filter(client, msg, spoll=False):
