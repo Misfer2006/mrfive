@@ -89,3 +89,6 @@ Name - {}"""
 ᴇxᴀᴍᴘʟᴇ : Loki S01E01 & Loki S01 E01
 🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)
 """
+
+    HOWTODOWNLOAD_TXT = """
+    FIRS CLICK BUTTON"""
