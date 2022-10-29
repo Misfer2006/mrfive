@@ -7,7 +7,7 @@ Just Add Me To Your Group As Admin 🤩"""
 
     ABOUT_TXT = """★ My Name: <a href=https://t.me/{}>{}</a>
 ★ Creator: <a href=https://t.me/Hansaka_Anuhas>Hansaka Anuhas</a> 🇱🇰
-★ Bot Server: <a href=https://www.digitalocean.com>VPS</a>
+★ Bot Server: <a href=https://www.heroku.com>Heroku</a>
 ★ Database: <a href=https://www.mongodb.com>MongoDB</a>"""
 
     FILTERS_TXT = """Filters"""
