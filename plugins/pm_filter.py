@@ -97,6 +97,9 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
 
+    elif query.data == "pages":
+        await query.answer()
+        
     elif query.data == "info":
         await query.answer(text=script.REQINFO, show_alert=True)
 
