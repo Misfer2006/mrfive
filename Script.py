@@ -65,6 +65,9 @@ Added By - {}"""
     LOG_TEXT_P = """#NewUser
 ID - <code>{}</code>
 Name - {}"""
-    
+
+    FORCESUB_TXT = """1. First join the Updates Channel.
+2. Then press the Try Again button."""
+
     HOWTODOWNLOAD_TXT = """1. First press the Button of the Movie you want.
-    2. Then <b>start</b> the Bot."""
+2. Then <b>start</b> the Bot."""
