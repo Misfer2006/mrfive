@@ -58,7 +58,7 @@ async def next_page(bot, query):
 
     if not files:
         return
-    settings = await get_settings(query.from_user.id)
+    settings = await get_settings(query.message.chat.id)
     if settings['button']:
         btn = [
             [
@@ -646,7 +646,7 @@ async def auto_filter(client, msg, spoll=False):
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
-        req = query.from_user.id if query.from_user.id else 0
+        req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
