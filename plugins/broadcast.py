@@ -25,7 +25,7 @@ async def verupikkals(bot, message):
         if pti:
             success += 1
         elif pti == False:
-            elif sh == "Error":
+            if sh == "Error":
                 failed += 1
         done += 1
         await asyncio.sleep(2)
