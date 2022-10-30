@@ -58,7 +58,7 @@ async def next_page(bot, query):
 
     if not files:
         return
-    settings = await get_settings(query.message.chat.id)
+    settings = await get_settings(query.from_user.id)
     if settings['button']:
         btn = [
             [
