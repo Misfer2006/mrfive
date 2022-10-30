@@ -17,6 +17,8 @@ async def verupikkals(bot, message):
     start_time = time.time()
     total_chats = await db.total_chat_count()
     done = 0
+    failed =0
+
     success = 0
     async for chat in chats:
         pti, sh = await broadcast_messages(int(chat['id']), b_msg)
@@ -24,7 +26,8 @@ async def verupikkals(bot, message):
             success += 1
         elif pti == False:
             elif sh == "Error":
-                done += 1
+                failed += 1
+        done += 1
         await asyncio.sleep(2)
         if not done % 20:
             await sts.edit(f"Broadcast in progress:\n\nTotal Chats {total_chats}\nCompleted: {done} / {total_chats}\nSuccess: {success}")    
