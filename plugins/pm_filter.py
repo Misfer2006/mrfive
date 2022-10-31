@@ -439,7 +439,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Connections', callback_data='connections')
        ], [
             InlineKeyboardButton('Extra Mods', callback_data='extramods'),
-            InlineKeyboardButton('Status', callback_data='stats'),
+            InlineKeyboardButton('Status', callback_data='status'),
        ], [
             InlineKeyboardButton('◀️ Back', callback_data='start')
         ]]
