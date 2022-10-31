@@ -524,9 +524,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "stats":
+    elif query.data == "status":
         buttons = [[
-            InlineKeyboardButton('🔄 Refresh', callback_data='rfrsh')
+            InlineKeyboardButton('🔄 Refresh', callback_data='refresh')
         ], [
             InlineKeyboardButton('◀️ Back', callback_data='help')
         ]]
@@ -543,11 +543,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "rfrsh":
-        await query.answer("Fetching MongoDb DataBase")
+    elif query.data == "refresh":
+        await query.answer("Refreshing DataBase...")
         buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='help'),
-            InlineKeyboardButton('🔄 Refresh', callback_data='rfrsh')
+            InlineKeyboardButton('◀️ Back', callback_data='help')
+        ], [
+            InlineKeyboardButton('🔄 Refresh', callback_data='refresh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
