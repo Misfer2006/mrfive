@@ -698,7 +698,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-    if imdb.get('poster'):
+      if imdb.get('poster'):
         try:
             a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                           reply_markup=InlineKeyboardMarkup(btn))
