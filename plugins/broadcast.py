@@ -7,7 +7,7 @@ from info import ADMINS
 from utils import broadcast_messages
 import asyncio
 
-@Client.on_message(filters.command("roadcast") & filters.user(ADMINS) & filters.reply)
+@Client.on_message(filters.command("roadcast") & filters.user(ADMINS)
 async def verupikkals(bot, message):
     users = await db.get_all_chats()
     b_msg = message.reply_to_message
