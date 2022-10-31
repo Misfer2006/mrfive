@@ -6,9 +6,11 @@ Just Add Me To Your Group As Admin 🤩"""
     HELP_TXT = """Help"""
 
     ABOUT_TXT = """★ My Name: <a href=https://t.me/{}>{}</a>
-★ Creator: <a href=https://t.me/@Mohamed_misfer>Mohamed Misfer</a>
 ★ Bot Server: <a href=https://www.heroku.com>Heroku</a>
-★ Database: <a href=https://www.mongodb.com>MongoDB</a>"""
+★ Database: <a href=https://www.mongodb.com>MongoDB</a>
+
+★ Creator: <a href=https://t.me/Mohamed_misfer>Mohamed Misfer</a>
+★ Support Group: <a href=https://t.me/timelymoviessss>📽Timely movies🎥</a>"""
 
     FILTERS_TXT = """Filters"""
 
