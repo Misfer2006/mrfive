@@ -161,7 +161,7 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
         ]
     message = quer_y.message.reply_to_message or quer_y.message
     if imdb:
-        caption = f"🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating} / 10</a>\n☀️ Languages: {languages}\n📀 RunTime: {runtime} Minutes".format(
+        caption = "🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating} / 10</a>\n☀️ Languages: {languages}\n📀 RunTime: {runtime} Minutes".format(
             query = imdb['title'],
             title = imdb['title'],
             votes = imdb['votes'],
