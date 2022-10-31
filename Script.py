@@ -47,9 +47,7 @@ Just Add Me To Your Group As Admin 🤩"""
 
 <b>Commands and Usage:</b>
 • /id - User ID
-• /info - User Information
-• /imdb - IMDb Movie Information
-• /search - Various Movie Information"""
+• /info - User Informations"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
 ★ Total Users: <code>{}</code>
