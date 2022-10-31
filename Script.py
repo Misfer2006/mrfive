@@ -6,7 +6,7 @@ Just Add Me To Your Group As Admin 🤩"""
     HELP_TXT = """Help"""
 
     ABOUT_TXT = """★ My Name: <a href=https://t.me/{}>{}</a>
-★ Creator: <a href=https://t.me/Hansaka_Anuhas>Hansaka Anuhas</a> 🇱🇰
+★ Creator: <a href=https://t.me/@Mohamed_misfer>Mohamed Misfer</a>
 ★ Bot Server: <a href=https://www.heroku.com>Heroku</a>
 ★ Database: <a href=https://www.mongodb.com>MongoDB</a>"""
 
