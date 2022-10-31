@@ -698,6 +698,24 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
+    if imdb.get('poster'):
+        try:
+            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                          reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(3600)
+            await a.delete()
+        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
+            pic = imdb.get('poster')
+            poster = pic.replace('.jpg', "._V1_UX360.jpg")
+            b = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(3600)
+            await b.delete()
+        except Exception as e:
+            logger.exception(e)
+            c = await message.reply_text(caption, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(3600)
+            await c.delete()
+    else:
         if imdb:
           caption = IMDB_TEMPLATE.format(
             query = imdb['title'],
@@ -730,24 +748,6 @@ async def auto_filter(client, msg, spoll=False):
             url = imdb['url'],
             **locals()
         )
-    if imdb and imdb.get('poster'):
-        try:
-            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
-                                          reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await a.delete()
-        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
-            pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            b = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await b.delete()
-        except Exception as e:
-            logger.exception(e)
-            c = await message.reply_text(caption, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await c.delete()
-    else:
         d = await message.reply_text(caption, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(3600)
         await d.delete()
