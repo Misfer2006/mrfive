@@ -546,9 +546,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "refresh":
         await query.answer("Refreshing DataBase...")
         buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='help')
-        ], [
             InlineKeyboardButton('🔄 Refresh', callback_data='refresh')
+        ], [
+            InlineKeyboardButton('◀️ Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
