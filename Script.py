@@ -51,7 +51,7 @@ Just Add Me To Your Group As Admin 🤩"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
 ★ Total Users: <code>{}</code>
-★ Total Chats: <code>{}</code>
+★ Total Groups: <code>{}</code>
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
 
