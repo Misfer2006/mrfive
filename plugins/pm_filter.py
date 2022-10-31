@@ -699,7 +699,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         if imdb:
-        caption = IMDB_TEMPLATE.format(
+          caption = IMDB_TEMPLATE.format(
             query = imdb['title'],
             title = imdb['title'],
             votes = imdb['votes'],
