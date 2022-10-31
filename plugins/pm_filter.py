@@ -698,6 +698,8 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
+        imdb = await get_poster(search, file=(files[0]).file_name)
+        if imdb:
         cap = f"Title: {title}".format(
               title = imdb['title'],
               **locals()
