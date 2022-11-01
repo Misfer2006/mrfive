@@ -723,17 +723,14 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"✅ I Found Your Query: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>\n\n<i>This Message will be Auto Deleted after One Hours to avoid Copyright Issues.</i>"
     if imdb and imdb.get('poster'):
         try:
-            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await a.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            b = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await b.delete()
+            await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
+            logger.exception(e)
             await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
