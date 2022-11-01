@@ -734,16 +734,11 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(3600)
             await b.delete()
         except Exception as e:
-            logger.exception(e)
-            c = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await c.delete()
+            await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        d = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(3600)
-        await d.delete()
+        await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
-            await msg.message.delete()
+        await msg.message.delete()
 
 
 async def advantage_spell_chok(msg):
