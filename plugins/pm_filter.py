@@ -720,28 +720,20 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"✅ I Found Your Query: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>\n\n<i>This Message will be Auto Deleted after One Hours to avoid Copyright Issues.</i>"
+        cap = f"✅ I Found Your Query: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>"
     if imdb and imdb.get('poster'):
         try:
-            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
-                                          reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await a.delete()
+            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                      reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            b = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await b.delete()
+            await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            c = await message.reply_photo(photo="https://telegra.ph/file/773deec20a8e285020311.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await c.delete()
+            await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        d = await message.reply_photo(photo="https://telegra.ph/file/773deec20a8e285020311.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(3600)
-        await d.delete()
+        await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
         await msg.message.delete()
 
@@ -796,10 +788,10 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="❌ Close ❌", callback_data=f'spolling#{user}#close_spellcheck')])
-    a = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    k = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
-    await a.delete()
+    await k.delete()
 
 
 async def manual_filters(client, message, text=False):
