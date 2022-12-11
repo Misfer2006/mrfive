@@ -10,7 +10,7 @@ Just Add Me To Your Group As Admin 🤩"""
 ★ Database: <a href=https://www.mongodb.com>MongoDB</a>
 ★ Bot username : @newhrgervsbot
 ★ Creator: <a href=https://t.me/Mohamed_misfer>Mohamed Misfer</a>
-★ Source: <a href=https://github.com/Misfer2006/mrfive</a>
+★ Source: <a href=https://github.com/Misfer2006>mrfive</a>
 ★ Support Group: <a href=https://t.me/timelymoviessss>📽Timely movies🎥</a>"""
 
     FILTERS_TXT = """Filters"""
