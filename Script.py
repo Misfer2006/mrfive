@@ -8,7 +8,7 @@ Just Add Me To Your Group As Admin 🤩"""
     ABOUT_TXT = """★ My Name: <a href=https://t.me/{}>{}</a>
 ★ Bot Server: <a href=https://www.heroku.com>Heroku</a>
 ★ Database: <a href=https://www.mongodb.com>MongoDB</a>
-
+★ Bot username : @newhrgervsbot
 ★ Creator: <a href=https://t.me/Mohamed_misfer>Mohamed Misfer</a>
 ★ Support Group: <a href=https://t.me/timelymoviessss>📽Timely movies🎥</a>"""
 
@@ -57,7 +57,7 @@ Just Add Me To Your Group As Admin 🤩"""
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
 
-    FORCESUB_TXT = """1. First Join the Updates Channel.
+    FORCESUB_TXT = """1. First Join our tv series Channel.
 2. Then press the Try Again Button."""
 
     HOWTODOWNLOAD_TXT = """1. First press the Button of the Movie you want.
