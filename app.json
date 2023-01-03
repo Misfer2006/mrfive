@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/HansakaAnuhas/FilterBot",
-    "repository": "https://github.com/HansakaAnuhas/FilterBot",
+    "website": "https://github.com/Misfer2006/mrfive",
+    "repository": "https://github.com/Misfer2006/mrfive",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
